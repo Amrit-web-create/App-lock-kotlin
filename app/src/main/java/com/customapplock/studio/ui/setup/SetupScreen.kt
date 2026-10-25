@@ -25,7 +25,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Surface
@@ -181,7 +180,7 @@ private fun ChooseType(count: Int, isMaster: Boolean, onPick: (LockType) -> Unit
                         Text(t.title, color = Color.White, fontWeight = FontWeight.Bold, fontSize = 16.sp)
                         Text(t.hint, color = Color.White.copy(alpha = .6f), fontSize = 13.sp)
                     }
-                    Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, null, tint = Color.White.copy(alpha = .5f))
+                    Text("›", color = Color.White.copy(alpha = .5f), fontSize = 28.sp)
                 }
             }
         }
