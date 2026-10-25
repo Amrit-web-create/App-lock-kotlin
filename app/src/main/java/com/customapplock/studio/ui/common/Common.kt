@@ -27,6 +27,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.fragment.app.FragmentActivity
 import com.customapplock.studio.R
@@ -71,7 +72,7 @@ fun AppIcon(pkg: String, size: Dp, loader: suspend (String) -> ImageBitmap?) {
         Box(
             Modifier.size(size).clip(RoundedCornerShape(size / 4)).background(Color(0xFF06B6D4).copy(alpha = .2f)),
             contentAlignment = Alignment.Center
-        ) { androidx.compose.material3.Text("🔒", fontSize = (size.value / 2).sp()) }
+        ) { androidx.compose.material3.Text("🔒", fontSize = (size.value / 2).sp) }
         return
     }
     val bmp by produceState<ImageBitmap?>(null, pkg) { value = loader(pkg) }
@@ -82,7 +83,6 @@ fun AppIcon(pkg: String, size: Dp, loader: suspend (String) -> ImageBitmap?) {
     }
 }
 
-private fun Float.sp() = androidx.compose.ui.unit.TextUnit(this, androidx.compose.ui.unit.TextUnitType.Sp)
 
 /** 320x50 banner, shown on the lock overlay only. Fixed height + margins so it never touches lock controls. */
 @Composable
